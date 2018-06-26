@@ -1,0 +1,8 @@
+<label>Name</label><input type="text" [(ngModel)] = "name"/>
+{{ name | uppercase }}
+
+<h2 class="bgcolor">{{time}}</h2>
+
+<h3 [style.color] = "titleStyle">Property Binding</h3>
+
+<button [disabled]="buttonStatus" (click) ="Save($event)">Redeem</button>

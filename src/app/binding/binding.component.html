@@ -1,0 +1,34 @@
+<div class="mycolor">
+    <h1>{{title}}</h1>
+
+    <h4 class="text-left">
+        <div class="panel">Click Your Favorite Framework</div>
+        <br>
+        <li *ngFor="let item of items" (click)="onClickEvent(item)">{{ item.name }}</li>
+    </h4>
+    
+<div *ngIf="clicked; then show else warn">
+    
+
+</div>
+
+<div *ngIf="clicked">
+    <h1>asdadss</h1>
+</div>
+
+    <ng-template #show>
+        <p>
+        You have selected</p>
+        <input type="text" [(ngModel)]="clickedItem.name">
+    </ng-template>
+
+    <ng-template #warn>
+        <h4 class="text-danger">
+            Select your framework
+        </h4>
+    </ng-template>
+
+<button (click)="example()"></button>
+</div>
+<app-news></app-news>
+<app-start></app-start>
