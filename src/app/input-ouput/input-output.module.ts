@@ -15,5 +15,4 @@ import { PriceQuoterComponent, OutputComponent, MailComponent} from './output-bi
     exports: [StockComponent, OutputComponent]
 })
 export class IOModule{
-
 }

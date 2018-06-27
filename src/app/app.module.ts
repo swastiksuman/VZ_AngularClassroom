@@ -14,7 +14,12 @@ import { StartComponent } from './binding/start/start.component';
 import { IOModule } from './input-ouput/input-output.module';
 import { ViewChildParentComponent } from './view-child/view-child.parent.component';
 import { ViewChildComponent } from './view-child/view-child.component';
-
+import { DIModule } from './di/di.module';
+import { ChildComponent, CompLifecycleComponent } from './comp-lifecycle/comp-lifecycle.component';
+import { Service } from './dynamic/service-loader';
+import { DynamicComponent } from './dynamic/dynamic.component';
+import { ContactModule } from './multi-component/services/contact.module';
+import { ContactListComponent } from './multi-component/services/contact-layer/contactlist.component';
 
 
 @NgModule({
@@ -28,14 +33,21 @@ import { ViewChildComponent } from './view-child/view-child.component';
     NestedComponent,
     StartComponent,
     ViewChildParentComponent,
-    ViewChildComponent
+    ViewChildComponent,
+    ChildComponent,
+    CompLifecycleComponent,
+    DynamicComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    IOModule
+    IOModule,
+    DIModule,
+    ContactModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [Service],
+  bootstrap: [AppComponent],
+  /* Declare Component for dynamic entry here*/
+  entryComponents: [DynamicComponent]
 })
 export class AppModule { }
