@@ -6,3 +6,4 @@ export const CONTACTS: Contact[] =[
 {name: 'Kavitha', email: 'kavita@gmail.com', phone: '3435678'},
 {name: 'Rama', email: 'rama@gmail.com', phone: '34353678'}
 ]
+

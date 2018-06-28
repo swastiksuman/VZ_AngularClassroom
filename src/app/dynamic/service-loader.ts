@@ -26,7 +26,6 @@ import { ViewContainerRef } from '@angular/core';
     addDynamicComponent() {
       const factory = this.factoryResolver
                           .resolveComponentFactory(DynamicComponent)
-
       const component = factory
         .create(this.rootViewContainer.parentInjector);
         this.rootViewContainer.insert(component.hostView);

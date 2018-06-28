@@ -71,6 +71,8 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
         */
        //attaches then detaches
        //this.cd.detectChanges();
+
+       //Restrict based on no changes
        this.cd.checkNoChanges();
     }
 

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -20,7 +20,11 @@ import { Service } from './dynamic/service-loader';
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { ContactModule } from './multi-component/services/contact.module';
 import { ContactListComponent } from './multi-component/services/contact-layer/contactlist.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { WeatherComponent } from './http/weather.component';
+import { HttpComponent } from './http/http.component';
+import { HttpService } from './http/http.service';
 
 @NgModule({
   declarations: [
@@ -36,16 +40,21 @@ import { ContactListComponent } from './multi-component/services/contact-layer/c
     ViewChildComponent,
     ChildComponent,
     CompLifecycleComponent,
-    DynamicComponent
+    DynamicComponent,
+    WeatherComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     IOModule,
     DIModule,
-    ContactModule
+    ContactModule,
+    HttpClientModule,
+    HttpModule, ReactiveFormsModule
   ],
-  providers: [Service],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [Service, HttpService],
   bootstrap: [AppComponent],
   /* Declare Component for dynamic entry here*/
   entryComponents: [DynamicComponent]
