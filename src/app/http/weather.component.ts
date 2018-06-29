@@ -33,7 +33,7 @@ export class WeatherComponent implements OnInit {
     'http://api.openweathermap.org/data/2.5/weather?q=';
 
     private urlSuffix  =
-    '&units=imperial&appid=293a0ddf7702211b1d931aa932e2848e';
+    '&units=imperial&appid=fd864daaad736ce684d81eabe5e3e757';
 
    // FormControl comes from ReactiveFormsModule
     searchInput: FormControl = new FormControl();
@@ -46,6 +46,7 @@ export class WeatherComponent implements OnInit {
             .pipe(debounceTime(4000))
             .pipe(switchMap((city: string) => this.getWeather(city)))
             .subscribe( ( res: any) => {
+                console.log(res);
                this.description = res.weather[0].description;
                this.temperature = res.main.temp;
                this.humidity = res.main.humidity;

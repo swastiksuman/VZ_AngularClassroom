@@ -25,6 +25,7 @@ import { HttpModule } from '@angular/http';
 import { WeatherComponent } from './http/weather.component';
 import { HttpComponent } from './http/http.component';
 import { HttpService } from './http/http.service';
+import { SharedModule } from './shared-folder/shared.module';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { HttpService } from './http/http.service';
     DIModule,
     ContactModule,
     HttpClientModule,
-    HttpModule, ReactiveFormsModule
+    HttpModule, ReactiveFormsModule, SharedModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [Service, HttpService],
